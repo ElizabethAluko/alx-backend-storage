@@ -25,9 +25,9 @@ BEGIN
 	-- Update the user's total score
 	UPDATE users u
 	SET u.average_score = (
-		SELECT AVG(c.score) FROM corrections c WHERE c.user_id = u.id
+		SELECT AVG(c.score) FROM corrections c WHERE c.user_id = u.user_id
 	)
-	WHERE u.id = user_id;
+	WHERE u.user_id = user_id;
 END //
 
 DELIMITER ;
