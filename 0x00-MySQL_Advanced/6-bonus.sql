@@ -16,7 +16,7 @@ BEGIN
 	-- If the project doesn't exist, create it
 	IF project_id IS NULL THEN
 		INSERT INTO projects (name) VALUES (project_name);
-		SET id = LAST_INSERT_ID();
+		SET project_id = LAST_INSERT_ID();
 	END IF;
 
 	-- Add the correction
