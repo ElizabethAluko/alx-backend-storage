@@ -29,5 +29,5 @@ BEGIN
 	WHERE id = user_id;
 END //
 
-DELIMITER;
+DELIMITER ;
 
