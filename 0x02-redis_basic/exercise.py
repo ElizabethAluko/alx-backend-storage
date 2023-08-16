@@ -89,31 +89,6 @@ class Cache:
             return fn(data)
         return data
 
-    def get_str(self, key: str) -> Union[str, None]:
-        """
-        Retrieves a string from the Redis cache using the provided key.
-
-        Args:
-            key (str): The key under which the data is stored in Redis.
-
-        Returns:
-            Union[str, None]: The retrieved string, or None if key does not exist.
-        """
-        return self.get(key, fn=lambda x: x.decode("utf-8"))
-
-    def get_int(self, key: str) -> Union[int, None]:
-        """
-        Retrieves an integer from the Redis cache using the provided key.
-
-        Args:
-            key (str): The key under which the data is stored in Redis.
-
-        Returns:
-            Union[int, None]: The retrieved integer, or None if key does not exist.
-        """
-        return self.get(key, fn=int)
-
-
 def replay(method: Callable) -> None:
     """
     Displays the history of calls for a given method.
