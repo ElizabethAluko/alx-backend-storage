@@ -115,3 +115,24 @@ class Cache:
             Union[int, None]: The retrieved integer, or None if key does not exist.
         """
         return self.get(key, fn=int)
+
+def replay(method: Callable) -> None:
+    """
+    Displays the history of calls for a given method.
+
+    Args:
+        method (Callable): The method to display history for.
+    """
+    input_key = method.__qualname__ + ":inputs"
+    output_key = method.__qualname__ + ":outputs"
+    inputs = [eval(args_str) for args_str in cache._redis.lrange(input_key, 0, -1)]
+    outputs = cache._redis.lrange(output_key, 0, -1)
+    print(f"{method.__qualname__} was called {len(inputs)} times:")
+    for args, output in zip(inputs, outputs):
+        print(f"{method.__qualname__}{args} -> {output.decode('utf-8')}")
+
+cache = Cache()
+cache.store("foo")
+cache.store("bar")
+cache.store(42)
+replay(cache.store)
