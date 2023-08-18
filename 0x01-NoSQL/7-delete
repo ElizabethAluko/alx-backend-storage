@@ -1,0 +1,10 @@
+// Delete all documents with name Holberton school with address in
+// the collection school:
+// The database name is passed as option of mongo command
+
+db.school.remove(
+	{"name" : "Holberton school"},
+	{multi: true}
+)
+exit
+
