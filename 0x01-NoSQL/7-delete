@@ -2,7 +2,7 @@
 // the collection school:
 // The database name is passed as option of mongo command
 
-db.school.drop(
+db.school.delete(
 	{"name" : "Holberton school"},
 	{multi: true}
 )
