@@ -1,0 +1,6 @@
+// List all documents with name="Holberton school" in the collection school
+// The database name is passed as option of mongo command
+
+db.school.find({"name" : "Holberton school"})
+exit
+
