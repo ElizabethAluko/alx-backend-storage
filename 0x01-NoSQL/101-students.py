@@ -4,7 +4,6 @@
 This module provides functions to interact with a MongoDB collection.
 """
 
-import pymongo
 
 def top_students(mongo_collection):
     """
@@ -19,8 +18,8 @@ def top_students(mongo_collection):
     students = list(mongo_collection.find({}))
 
     for student in students:
-        total_score = sum(student["scores"])
-        student["averageScore"] = total_score / len(student["scores"])
+        total_score = sum(student["score"])
+        student["averageScore"] = total_score / len(student["score"])
 
     sorted_students = sorted(students, key=lambda x: x["averageScore"], reverse=True)
 
