@@ -1,0 +1,6 @@
+// Count all documents in the collection school:
+// The database name is passed as option of mongo command
+
+db.school.count()
+exit
+
