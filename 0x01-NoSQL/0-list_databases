@@ -1,13 +1,8 @@
 // A script that lists all databases in MongoDB
 
-from pymongo import MongoClient
-mongo
-
-client = MongoClient()
-database_names = client.list_database_names()
-
-for name in database_names:
-    print(name)
-
+MongoDB shell version v(db.version)
+MongoDB shell version v(db.version)
+connecting to: mongodb://127.0.0.1:27017
+show databases
 exit
 
