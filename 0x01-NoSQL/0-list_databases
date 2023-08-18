@@ -1,8 +1,5 @@
 // A script that lists all databases in MongoDB
 
-MongoDB shell version v(db.version)
-MongoDB shell version v(db.version)
-connecting to: mongodb://127.0.0.1:27017
 show databases
 exit
 
